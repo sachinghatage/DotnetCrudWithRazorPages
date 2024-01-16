@@ -1,0 +1,33 @@
+﻿@page
+@model ProductApplication.Pages.Product.ListModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>StockQuantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var item in Model.listProducts)
+            {
+                <tr>
+                    <td>@item.ProductId</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.StockQuantity</td>
+                    <td>
+                        <a href="/Product/Edit?id=@item.ProductId" class="btn btn-primary">Edit</a>                    
+                    </td>
+                    <td>
+                        <a href="/Product/Delete?id=@item.ProductId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

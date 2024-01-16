@@ -1,0 +1,19 @@
+﻿@page
+@using ProductApplication.Model;
+@using System.Data.SqlClient;
+@inject IConfiguration configuration;
+@{
+    try
+    {
+        DataAccessLayer dal = new DataAccessLayer();
+        string id = Request.Query["id"];
+        dal.DeleteStudent(id, configuration);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+        Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+    }
+
+    Response.Redirect("/Product/List");
+}

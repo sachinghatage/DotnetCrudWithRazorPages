@@ -1,0 +1,32 @@
+﻿@page
+@model ProductApplication.Pages.Product.EditModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" name="hiddenId" value="@Model.product.ProductId"/>
+    <div class="row mb-md-3">
+        <label class="col-sm-3">ProductName</label>
+        <div class="col-sm-3">
+            <input type="text" name="ProductName" value="@Model.product.ProductName" />
+        </div>
+    </div>
+    <div class="row mb-md-3">
+        <label class="col-sm-3">Price</label>
+        <div class="col-sm-3">
+            <input type="text" name="Price" value="@Model.product.Price" />
+        </div>
+    </div>
+    <div class="row mb-md-3">
+        <label class="col-sm-3">StockQuantity</label>
+        <div class="col-sm-3">
+            <input type="text" name="StockQuantity" value="@Model.product.StockQuantity" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-3 text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+
+</form>
